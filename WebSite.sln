@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.csproj", "{625E260C-BC29-43FA-97DF-FC89BA02EDA4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{443AD900-8BB7-4848-8B7C-50C8ABA89743} = {443AD900-8BB7-4848-8B7C-50C8ABA89743}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite.Tests", "WebSite.Tests\WebSite.Tests.csproj", "{9AD6FEBC-2E12-4128-9634-A862CEF6EB9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{77433624-854D-4A92-B0C6-72600F9DDA54}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{6F0C1C35-A489-4C84-AE5C-D9C3C356E065}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\WebSite-WAWS-dev.json = PublishScripts\Configurations\WebSite-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "RuTar", "RuTar\RuTar.ccproj", "{120EC750-525B-4BA7-A256-88551C5AD6E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{443AD900-8BB7-4848-8B7C-50C8ABA89743} = {443AD900-8BB7-4848-8B7C-50C8ABA89743}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerRole", "WorkerRole\WorkerRole.csproj", "{356CB4A7-3C90-4769-8810-434F46384771}"
+	ProjectSection(ProjectDependencies) = postProject
+		{443AD900-8BB7-4848-8B7C-50C8ABA89743} = {443AD900-8BB7-4848-8B7C-50C8ABA89743}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuTarCommon", "RuTarCommon\RuTarCommon.csproj", "{443AD900-8BB7-4848-8B7C-50C8ABA89743}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A593963-93B9-4038-AB98-A525A7FA34D2}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{625E260C-BC29-43FA-97DF-FC89BA02EDA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625E260C-BC29-43FA-97DF-FC89BA02EDA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625E260C-BC29-43FA-97DF-FC89BA02EDA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625E260C-BC29-43FA-97DF-FC89BA02EDA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD6FEBC-2E12-4128-9634-A862CEF6EB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD6FEBC-2E12-4128-9634-A862CEF6EB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD6FEBC-2E12-4128-9634-A862CEF6EB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD6FEBC-2E12-4128-9634-A862CEF6EB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{120EC750-525B-4BA7-A256-88551C5AD6E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120EC750-525B-4BA7-A256-88551C5AD6E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{120EC750-525B-4BA7-A256-88551C5AD6E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120EC750-525B-4BA7-A256-88551C5AD6E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356CB4A7-3C90-4769-8810-434F46384771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356CB4A7-3C90-4769-8810-434F46384771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356CB4A7-3C90-4769-8810-434F46384771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356CB4A7-3C90-4769-8810-434F46384771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443AD900-8BB7-4848-8B7C-50C8ABA89743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443AD900-8BB7-4848-8B7C-50C8ABA89743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443AD900-8BB7-4848-8B7C-50C8ABA89743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443AD900-8BB7-4848-8B7C-50C8ABA89743}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F0C1C35-A489-4C84-AE5C-D9C3C356E065} = {77433624-854D-4A92-B0C6-72600F9DDA54}
+	EndGlobalSection
+EndGlobal

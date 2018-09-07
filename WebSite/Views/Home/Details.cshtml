@@ -1,0 +1,34 @@
+﻿@model WebSite.Models.DetailsModel
+
+@{
+    ViewBag.Title = "Report Details Page";
+}
+
+<div class="jumbotron">
+    <h1>RuTar Reports</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <p>Your report #@Html.Raw(Model.Report.ReportId) details:</p>
+
+        <ul>
+            <li>
+                Title: @Html.Raw(Model.Report.Title)
+            </li>
+            <li>
+                Report status: @Html.Raw(Model.Report.State)
+            </li>
+            <li>
+                Report is processed: @Html.Raw(Model.Report.Finished)
+            </li>
+            <li>
+                Most liked post: <a href="@Html.Raw(Model.Top)" target="_blank">@Html.Raw(Model.Top)</a>
+            </li>
+        </ul>
+
+        <p><img src="/Home/Chart?id=@Html.Raw(Model.Report.ReportId)" /> </p>
+
+    </div>
+</div>

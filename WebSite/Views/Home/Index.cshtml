@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<RuTarCommon.Report>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>RuTar Reports</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            RuTar Reports is a sample application that demonstrates how to create a
+            multi-tier ASP.NET application that runs in an Azure Cloud Service
+            or Web Site.
+        </p>
+        <p>The application uses Azure SQL Database and Azure storage queues and tables.</p>
+
+        <h2>Public reports:</h2>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReportId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Finished)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReportId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.State)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Finished)
+                    </td>
+                    <td>
+                        @if (item.UserId == User.Identity.GetUserId() && item.Finished && item.State == "Succeed")
+                        {
+                            @Html.ActionLink("Details", "Details", new {id = item.ReportId});
+                        }
+                        else
+                        {
+                            <div></div>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

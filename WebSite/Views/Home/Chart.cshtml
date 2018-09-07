@@ -1,0 +1,11 @@
+﻿@{
+    var xs = Model.xs;
+    var ys = Model.ys;
+    new Chart(width: 600, height: 400)
+        .AddTitle("Post likes per length")
+        .AddSeries(
+        name: "Posts",
+            xValue: xs,
+            yValues: ys)
+        .Write();
+}

@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNet.Identity
+@using Microsoft.Owin.Security
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm", @class = "navbar-right"}))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a class="btn btn-default navbar-right" href="@Url.Action("Create", "Home")">Create an Report</a>
+            </li>
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Home")
+            </li>
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @{
+                var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+                if (loginProviders.Count() == 0)
+                {
+                    @Html.Raw("No login providers!")
+                }
+                else
+                {
+                    using (Html.BeginForm("ExternalLogin", "Account"))
+                    {
+                        @Html.AntiForgeryToken()
+                        foreach (var p in loginProviders)
+                        {
+                             <button type="submit" class="btn btn-default navbar-right" style="margin-top: 10px;" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                        }
+                    }
+                }
+            }
+        </li>
+    </ul>
+}
